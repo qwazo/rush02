@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_say.h                                           :+:      :+:    :+:   */
+/*   ft_say.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paustin <paustin@student.21-school>        +#+  +:+       +#+        */
+/*   By: paustin <paustin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 13:07:50 by paustin           #+#    #+#             */
-/*   Updated: 2020/10/05 13:45:02 by paustin          ###   ########.fr       */
+/*   Updated: 2020/10/07 10:17:29 by paustin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,11 @@ int		ft_say_arg(char *dic, char *nbr)
 		return (-1);
 	}
 	res = ft_say(dic, nbr);
+	if (res == -2)
+	{
+		ft_puterror("Dict Error\n");
+		return (-2);
+	}
 	if (res < 0)
 		return (-1);
 	ft_putchar('\n');
@@ -102,6 +107,8 @@ int		ft_say_input(char *dic)
 	{
 		buff[n - 1] = 0;
 		res = ft_say_arg(dic, buff);
+		if (res == -2)
+			return (res);
 	}
 	return (0);
 }

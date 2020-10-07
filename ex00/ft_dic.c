@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dic.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paustin <paustin@student.21-school>        +#+  +:+       +#+        */
+/*   By: paustin <paustin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 13:28:37 by paustin           #+#    #+#             */
-/*   Updated: 2020/10/05 13:35:24 by paustin          ###   ########.fr       */
+/*   Updated: 2020/10/07 11:35:27 by paustin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,25 @@ int		ft_dic_print(int fd, int dfl)
 {
 	char	b;
 	int		res;
-	char	bfl;
+	char	bp;
 
-	bfl = 1;
+	bp = 0;
 	res = read(fd, &b, 1);
 	while (b != '\n')
 	{
 		if (res <= 0)
 			return (res);
-		if (ft_isspace(b) == 0 && bfl == 1)
-			bfl = 0;
-		if ((b == ':' && dfl == 1) || (b != ' ' && b != ':' & bfl == 1))
+		dfl = dfl + (b == ':');
+		if (dfl > 1 || ft_isp(b) == 0)
 			return (ST_EDIC);
-		if (bfl == 0)
-		{
-			if (ft_isp(b))
-				ft_putchar(b);
-			else
-				return (ST_EDIC);
-		}
+		if (bp != ':' && bp != 0 && !(bp == ' ' && b == ' '))
+			ft_putchar(bp);
+		if ((bp == 0 && b != ' ' && b != ':') || bp != 0)
+			bp = b;
 		res = read(fd, &b, 1);
 	}
+	if (bp != ' ')
+		ft_putchar(bp);
 	return (ST_FND);
 }
 

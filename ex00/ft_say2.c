@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_say2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paustin <paustin@student.21-school>        +#+  +:+       +#+        */
+/*   By: paustin <paustin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 23:09:22 by paustin           #+#    #+#             */
-/*   Updated: 2020/10/05 13:25:47 by paustin          ###   ########.fr       */
+/*   Updated: 2020/10/07 10:14:59 by paustin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int		ft_add_suffix(char *dic, char *nbr)
 		free(zs);
 		if (res < 0)
 			return (res);
+		if (res == 0)
+			return (-2);
 	}
 	return (z);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rush.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paustin <paustin@student.21-school>        +#+  +:+       +#+        */
+/*   By: paustin <paustin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 13:35:37 by paustin           #+#    #+#             */
-/*   Updated: 2020/10/05 13:37:45 by paustin          ###   ########.fr       */
+/*   Updated: 2020/10/07 11:35:54 by paustin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 # define DICNAME "numbers.dict"
 # define TDELIM ", "
